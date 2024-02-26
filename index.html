@@ -1,192 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <style>
-        .form-in{
-            display: flex;
-            justify-content: space-between;
-            padding: 2em;
+      .my-png {
+        border-radius: 50%;
+        box-shadow: 1px 0px 20px 0px blue;
+      }
+      .welcome {
+        font-size: xx-large;
+      }
+      .intro-1,
+      .intro-2 {
+        font-size: x-large;
+      }
+      .Home-section {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10vw;
+        height: 100vh;
+      }
+      .intro,
+      .my-intro {
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+      }
+      .intro-1 span {
+        font-size: 30px;
+      }
+      .About-section {
+        display: flex;
+        padding-left: 60px;
+        padding-top: 50px;
+      }
+      .about-image {
+        width: 80vw;
+      }
+      .container {
+        flex-direction: column;
+      }
+      .content {
+        padding: 5vw;
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+        align-items: center;
+      }
+      .content p {
+        font-size: 18px;
+        color: rgb(0, 187, 255);
+        text-align: center;
+      }
+      .container h1 {
+        font-size: x-large;
+      }
+      li {
+        margin: 5px 0;
+      }
+      .skills {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr;
+        padding: 10vw 50px;
+      }
+      .skill-element {
+        width: 60vw;
+        padding: 2vw;
+        margin: 3vw;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 10px;
+      }
+      .skill-element:hover {
+        transform: scale(1.1);
+        box-shadow: 1px 0px 10px 0px rgb(0, 98, 255);
+        transition: 400ms ease-in-out;
+      }
+      .section-title h1,
+      .portfolio-title h1 {
+        color: aliceblue;
+        font-size: xx-large;
+        text-align: center;
+      }
+      .skills-section {
+        padding: 0 10vw;
+      }
+      .skill-description {
+        color: aliceblue;
+      }
+      .dev-projects {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .portfolio-section {
+        padding-left: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .dev-portfolio,
+      .art-portfolio {
+        width: 90vw;
+        margin: 5vw 2vw;
+      }
+      .dev-projects {
+        padding: 2vw;
+        border: 1px dotted rgb(0, 242, 255);
+        border-radius: 10px;
+      }
+      .dev-project {
+        color: aliceblue;
+        padding: 1vw;
+        margin: 1vw;
+        border: 1px solid skyblue;
+        border-radius: 10px;
+      }
+      .contact-me {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5vw;
+      }
+      @media screen and (max-width: 700px) {
+        .Home-section {
+          flex-direction: column;
         }
-        .form{
-            display: flex;
-            flex-direction: column;
-            background-color: #0f1b28;
-            align-items: center;
+        .intro,
+        .my-intro {
+          align-items: center;
         }
-        input{
-            width: 70%;
-            border-radius: 5px;
+        .intro-2,
+        .intro-1 {
+          text-align: center;
         }
-        form{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 1em;
+        .About-section {
+          padding: 1vw;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 5vw;
         }
+        .about-image {
+          height: auto;
+        }
+        .container {
+          height: auto;
+          padding: 3vw;
+        }
+        .content ul {
+          list-style: none;
+        }
+        .content ul li {
+          text-align: center;
+        }
+        .portfolio-section {
+          padding: 5vw 1vw 1vw 1vw;
+        }
+        .social-media a img {
+          width: 50px;
+        }
+        .skills-section {
+          padding: 2vw;
+        }
+        .my-img img {
+          width: 50vw;
+        }
+      }
     </style>
-</head>
-<body>
-    <div class="container header">
-        <div class="heading">
-            <h2 style="font-family: serif; color: aqua;" class="hover-text">Portfolio</h2>
-        </div>
-        <div class="hero">
-            <div class="image">
-                <img src="./Assets/WhatsApp Image 2023-12-12 at 6.48.04 PM.jpeg" alt="profile-img" height="300" class="profile-img hover">
-            </div>
-            <div class="intro-text">
-                <h1 style="font-family: serif;" class="hover-text1">Hello there !!</h1>
-                <h2 style="font-family: serif;" class="hover-text1">My name is <span style="color: aqua;">Vedant Parkhe</span>!</h2>
-            </div>
-        </div>
-    </div>
+  </head>
+  <body>
+    <nav class="main-menu">
+      <ul>
+        <li>
+          <a href="#home">
+            <i class="fa fa-home nav-icon"></i>
+            <span class="nav-text">Home</span>
+          </a>
+        </li>
 
-    <div class="next">
-    <div class="middle">
-        <h2 style="margin: 0;">Hello Everyone, Welcome to my Portfolio</h2>
-        <h2 style="margin: 0;">I am a B.Tech Undergraduate currently pursuing Aerospace Engineering at Indian Institue of Technology Bombay</h2>
-    </div>
-    <div class="skills">
-        <h1 style="color: aqua; margin: 2em;" class="hover-text">Skills</h1>
+        <li>
+          <a href="#about">
+            <i class="fa fa-address-card nav-icon"></i>
+            <span class="nav-text">About</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#skills">
+            <i class="fa fa-toolbox nav-icon"></i>
+            <span class="nav-text">Skills</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#portfolio">
+            <i class="fa fa-envelope nav-icon"></i>
+            <span class="nav-text">Portfolio</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact">
+            <i class="fa fa-message nav-icon"></i>
+            <span class="nav-text">Contact</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section id="home" class="Home-section">
+      <div class="my-intro">
+        <div class="welcome">
+          <h1 style="color: aqua">Welcome</h1>
+        </div>
+        <div class="intro">
+          <div class="intro-1" style="color: aliceblue">
+            My name is <span style="color: rgb(9, 255, 0)"> Vedant Parkhe</span>
+          </div>
+          <div class="intro-2" style="color: aliceblue">
+            I'm a
+            <span style="color: aqua"
+              >Engineering student, Web Developer, Game Developer</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="my-img">
+        <img src="my.png" alt="" class="my-png" />
+      </div>
+    </section>
+    <section id="about" class="About-section">
+      <div class="about-image">
+        <img src="about.jpg" alt="" style="width: 30vw; border-radius: 10px" />
+      </div>
+      <div class="container">
+        <h1>About Me</h1>
+        <div class="content">
+          <p class="intro" style="color: aliceblue">
+            I am an engineering student at IIT Bombay pursuing a B.Tech in
+            Aerospace Engineering. I have a passion for web development, game
+            development, playing games, and watching anime cricket.
+          </p>
+          <p class="experience"><strong>Experience:</strong></p>
+          <ul>
+            <li>
+              <strong>Techfest, IIT Bombay:</strong>
+              <span class="role">Media Coordinator</span>
+              <span class="duration">(April 2023 - Present)</span>
+            </li>
+            <li>
+              <strong>IIT Bombay Racing:</strong>
+              <span class="role">Assistant Manager</span>
+              <span class="duration">(July 2023 - February 2024)</span>
+            </li>
+            <li>
+              <strong>Bizup:</strong> <span class="role">Content Analyst</span>
+              <span class="duration">(November 2023 - January 2024)</span>
+            </li>
+            <li>
+              <strong>Mood Indigo IIT Bombay:</strong>
+              <span class="role">Ambience Coordinator</span>
+              <span class="duration">(July 2023 - December 2023)</span>
+            </li>
+          </ul>
+          <p class="education"><strong>Education:</strong></p>
+          <ul>
+            <li>
+              <strong>Indian Institute of Technology, Bombay:</strong>
+              <span class="degree">Bachelor of Technology - BTech</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="skills" class="skills-section">
+      <div class="section-title"><h1>My Skills</h1></div>
+      <div class="skills">
         <div class="skill-element">
-            <div class="skill-icon">
-                <img src="./Assets/icons8-game-development-96.png" alt="game dev">
-            </div>
-            <div class="skill-description">
-                <h2 style="color: rgb(0, 255, 179);">Game Development</h2>
-                <h3>I have created multiple unity games of both 2D and 3D versions.
-                    Using C# programming languages I have designed both casual,puzzel and runner games.
-                </h3>
-            </div>
+          <div class="skill-icon">
+            <img src="./Assets/icons8-game-development-96.png" alt="game dev" />
+          </div>
+          <div class="skill-description">
+            <h2 style="color: rgb(0, 255, 179)">Game Development</h2>
+            <h3>
+              I have created multiple unity games of both 2D and 3D versions.
+              Using C# programming languages I have designed both casual,puzzel
+              and runner games.
+            </h3>
+          </div>
         </div>
         <div class="skill-element">
-            <div class="skill-icon">
-                <img src="./Assets/icons8-web-development-64.png" alt="web dev" width="96px">
-            </div>
-            <div class="skill-description">
-                <h2 style="color: rgb(0, 255, 179);">Web Development</h2>
-                    <h3>Proficient in HTML,CSS and Javascript, I have created several projects including
-                        Web pages clone, Portfolio websites.
-                </h3>
-            </div>
+          <div class="skill-icon">
+            <img
+              src="./Assets/icons8-web-development-64.png"
+              alt="web dev"
+              width="96px"
+            />
+          </div>
+          <div class="skill-description">
+            <h2 style="color: rgb(0, 255, 179)">Web Development</h2>
+            <h3>
+              Proficient in HTML,CSS and Javascript, I have created several
+              projects including Web pages clone, Portfolio websites.
+            </h3>
+          </div>
         </div>
         <div class="skill-element">
-            <div class="skill-icon">
-                <img src="./Assets/icons8-blender-48.png" alt="Blender" width="96px">
-            </div>
-            <div class="skill-description">
-                <h2 style="color: rgb(0, 255, 179);">Blender Animations</h2>
-                <h3>Created many of the 3D Character designs, Environment designs, Animations
-                </h3>
-            </div>
+          <div class="skill-icon">
+            <img
+              src="./Assets/icons8-blender-48.png"
+              alt="Blender"
+              width="96px"
+            />
+          </div>
+          <div class="skill-description">
+            <h2 style="color: rgb(0, 255, 179)">Blender Animations</h2>
+            <h3>
+              Created many of the 3D Character designs, Environment designs,
+              Animations
+            </h3>
+          </div>
         </div>
-    </div>
-    <div class="art-portfolio skills">
+      </div>
+    </section>
+    <section id="portfolio" class="portfolio-section">
+      <div class="portfolio-title">
+        <h1>My projects</h1>
+      </div>
+      <div class="dev-portfolio">
+        <div class="dev-projects">
+          <h1
+            style="
+              color: aliceblue;
+              grid-column-start: 1;
+              grid-column-end: 3;
+              text-align: center;
+              color: aquamarine;
+              padding: 0 1vw 2vw 1vw;
+            "
+          >
+            Dev Projects
+          </h1>
+          <div class="dev-project">
+            <h2 class="project-title">Self-API</h2>
+            <p class="project-description">
+              Created a self API using JS, Node.JS, EJS, Axios, Added some
+              functionality of adding, editing, deleting blogs
+            </p>
+            <p class="project-skill">
+              Skills: EJS · REST APIs · Web Development · Node.js · JavaScript
+            </p>
+          </div>
+          <div class="dev-project">
+            <h2 class="project-title">Self-Portfolio</h2>
+
+            <p class="project-description">
+              Created with the use of HTML, CSS a basic portfolio with some
+              responsiveness.
+            </p>
+            <p class="project-skill">
+              Skills: HTML5 · Web Development · Cascading Style Sheets (CSS) ·
+              Responsiveness · Web Design
+            </p>
+          </div>
+          <div class="dev-project">
+            <h2 class="project-title">Basic Chat-app</h2>
+            <p class="project-description">
+              This project demonstrates a simple user authentication system
+              using Express.js and ChatEngine API. It includes a server built
+              with Express and a React component for user authentication.
+            </p>
+            <p class="project-skill">
+              Skills: React.js · Back-End Web Development · Express.js · Node.js
+            </p>
+          </div>
+          <div class="dev-project">
+            <h2 class="project-title">Mario Clone Unity</h2>
+            <p class="project-description">
+              The og Mario platformer game clone, having several features like
+              the enemies, coin collection, boss battles and the enemy as well
+              as player attack behaviours.
+            </p>
+            <p class="project-skill">Skills: Unity · Game Development · C#</p>
+          </div>
+          <div class="dev-project">
+            <h2 class="project-title">Maze Warrior</h2>
+            <p class="project-description">
+              A newly created and ideated Maze warrior game with several levels,
+              amazing UI and enemy AI, coin collection system and maze puzzels.
+            </p>
+            <p class="project-skill">Skills: Unity · Game Development · C#</p>
+          </div>
+        </div>
+      </div>
+      <div class="art-portfolio">
+        <h1
+          style="
+            color: aliceblue;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            text-align: center;
+            color: aquamarine;
+            padding: 0 1vw 2vw 1vw;
+          "
+        >
+          Art Projects
+        </h1>
         <div class="port-ss">
-            <a href="https://vedantparkhe24.artstation.com/"><img src="./Assets/Screenshot 2024-01-01 142856.png" alt="art-portfolio" width="100%"></a>
+          <a href="https://vedantparkhe24.artstation.com/"
+            ><img
+              src="./Assets/Screenshot 2024-01-01 142856.png"
+              alt="art-portfolio"
+              width="100%"
+              style="border-radius: 10px; border: 1px solid snow"
+          /></a>
         </div>
-        <div class="port-text">
-            <h2 style="color: rgb(255, 255, 255); margin: 1em;">Have a look at my</h2>
-            <h1 style="color: aqua; margin: 1em;" class="hover-text"> Art Portfolio</h1>
+      </div>
+    </section>
+    <section id="contact" class="contact-section">
+      <h1
+        style="color: aqua; margin: 1em; text-align: center"
+        class="hover-text"
+      >
+        You can contact me
+      </h1>
+      <div class="contact-me">
+        <div class="social-media grid-center" style="margin: 1em 0">
+          <a href="https://www.instagram.com/mr.iitian_26/"
+            ><img src="./Assets/icons8-instagram-96.png" alt="insta" width="80"
+          /></a>
         </div>
-    </div>
-    <div class="about-me">
-        <div class="education">
-            <h1 style="color: aqua;" class="hover-text">Education</h1>
-            <div class="education-elements">
-                <div class="school ed-box">
-                    <div class="ed-icon">
-                        <img src="./icons8-school-64.png" alt="" width="96px">
-                    </div>
-                    <div class="ed-description">
-                        <div class="ed-title" style="color: rgb(0, 255, 179);;">
-                            <h2>School</h2>
-                        </div>
-                        <div class="ed-name">
-                            <h3>Jawaharlal Darda English Medium School</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="college ed-box">
-                    <div class="ed-icon">
-                        <img src="./Assets/iitblogo.png" alt="" width="96px">
-                    </div>
-                    <div class="ed-description">
-                        <div class="ed-title" style="color: rgb(0, 255, 179);;">
-                            <h2>College</h2>
-                        </div>
-                        <div class="ed-name">
-                            <h3>Indian Institute of Technology Bombay</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="social-media grid-center" style="margin: 1em 0">
+          <a href="https://www.linkedin.com/in/vedant-parkhe-934b841b9/"
+            ><img
+              src="./Assets/icons8-linkedin-96.png"
+              alt="linkedin"
+              width="80"
+          /></a>
         </div>
-        <hr style="margin: 20px 0;">
-        <div class="interests">
-            <div class="interest-title grid-center">
-                <h1 style="color: aqua; margin: 1em;" class="hover-text">Interests</h1>
-            </div>
-            <ul class="grid-center interest-item" style="list-style: none;">
-                <li><h2>Video Gaming</h2></li>
-                <li><h2>Anime Series</h2></li>
-                <li><h2>Designing</h2></li>
-                <li><h2>Webseries Binge Watch</h2></li>
-                <li><h2>Movies(every kind)</h2></li>
-            </ul>
-            <ul class="grid-center interest-item" style="list-style: none;">
-                <li><h2>Music</h2></li>
-                <li><h2>Animations</h2></li>
-                <li><h2>Coding</h2></li>
-                <li><h2>Drawing Anime charaters</h2></li>
-                <li><h2>Social media</h2></li>
-            </ul>
+        <div class="social-media grid-center" style="margin: 1em 0">
+          <a href="https://www.youtube.com/channel/UCb1uukFfZyuuVkge7kfI0rw"
+            ><img src="./Assets/icons8-youtube-96.png" alt="youtube" width="80"
+          /></a>
         </div>
-        <hr style="margin: 20px 0;">
-        <div class="Extras">
-            <div class="extras-title">
-                <h1 style="color: aqua; margin: 1em;" class="hover-text">Extras</h1>
-            </div>
-            <div class="extras-elements">
-                <div class="extra-point" style="margin-bottom: 4em;"><h2>Libra</h2></div>
-                <div class="extra-point" style="margin-bottom: 4em;"><h2>INTP</h2></div>
-                <div class="extra-point" style="margin-bottom: 4em;"><h2>Unvaccinated</h2></div>
-                <div class="extra-point" style="margin-bottom: 4em;"><h2>Big-time Texter</h2></div>
-                <div class="extra-point extra5" style="margin-bottom: 4em;"><h2>Instagram Scroller</h2></div>
-            </div>
+        <div class="social-media grid-center" style="margin: 1em 0">
+          <a href="https://github.com/mriitian"
+            ><img src="./Assets/icons8-github.gif" alt="github" width="80"
+          /></a>
         </div>
-    </div>
-    <div class="contact-me">
-        <div class="contact-title grid-center">
-            <h1 style="color: aqua; margin: 1em;" class="hover-text">You can contact me</h1>
-        </div>
-        <div class="social-media grid-center" style="margin: 1em 0;"><a href="https://www.instagram.com/mr.iitian_26/"><img src="./Assets/icons8-instagram-96.png" alt="insta"></a></div>
-        <div class="social-media grid-center" style="margin: 1em 0;"><a href="https://www.linkedin.com/in/vedant-parkhe-934b841b9/"><img src="./Assets/icons8-linkedin-96.png" alt="linkedin"></a></div>
-        <div class="social-media grid-center" style="margin: 1em 0;"><a href="https://www.youtube.com/channel/UCb1uukFfZyuuVkge7kfI0rw"><img src="./Assets/icons8-youtube-96.png" alt="youtube"></a></div>
-        <div class="social-media grid-center" style="margin: 1em 0;"><a href="https://github.com/mriitian"><img src="./Assets/icons8-github.gif" alt="github" height="80px"></a></div>
-    </div>
-    </div>
+      </div>
+    </section>
 
-    <div class="form">
-    <form action="/" style="width: 80%;">
-        <div class="form-in" style="width: 50%;">
-            <label for="fname"><h3 style="color: aliceblue;">Your Name: </h3></label>
-            <input type="text" id="fname" name="fname">
-        </div>
-        <div class="form-in" style="width: 50%;">
-            <label for="fname"><h3 style="color: aliceblue;">Subject: </h3></label>
-            <input type="text" id="fname" name="fname">
-        </div>
-        <div class="form-in" style="width: 50%;">
-            <label for="fname"><h3 style="color: aliceblue;">Message: </h3></label>
-            <input type="text" id="fname" name="fname" style="height: 10em;">
-        </div>
-        <input type="submit" value="Submit" style="width: 20%; height: 2em; background-color: green; color: black; font-size: larger;">
-    </form>
-    </div>  
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuItems = document.querySelectorAll(".main-menu ul li a");
+
+        menuItems.forEach((item) => {
+          item.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const targetSectionId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetSectionId);
+
+            if (targetSection) {
+              window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
